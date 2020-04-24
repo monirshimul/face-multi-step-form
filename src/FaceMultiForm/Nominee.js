@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Face from "./images/face.svg";
 
 export class Nominee extends Component {
 
@@ -18,7 +19,7 @@ export class Nominee extends Component {
         if (event.target.files[0]) {
             let file = event.target.files[0];
             // console.log(file);
-          //  console.log(idx);
+            //  console.log(idx);
             var reader = new FileReader();
             reader.readAsBinaryString(file);
 
@@ -38,7 +39,7 @@ export class Nominee extends Component {
         e.preventDefault()
 
         console.log(this.props.values.fields);
-        
+
     }
 
 
@@ -47,51 +48,68 @@ export class Nominee extends Component {
         console.log(values.fields[0].photograph);
         return (
             <div>
-                <form onSubmit={this.handleSubmit} onChange={this.props.onChange}>
+                <div className="row d-flex justify-content-center">
+                    <div className="card col-sm-6" style={{ paddingTop: "25px" }}>
+                        <div className="card-header up">
+                            <h3>Nominee's Information</h3>
+                        </div>
+                        <div className="card-body d-flex justify-content-center">
+                            <form onSubmit={this.handleSubmit} onChange={this.props.onChange}>
 
 
-                    {
-                        values.fields.map((val, idx) => {
-                            let nomineeId = `nominee-${idx}`, relationId = `relation-${idx}`, photographId = `photograph-${idx}`
-                            return (
-                                <div>
-                                    <table style={{ border: "1px solid black" }}>
-                                        <tr>
-                                            <td>
-                                                <label htmlFor={nomineeId}>Nominee</label>
-                                                <input
-                                                    type="text"
-                                                    name="nominee"
-                                                    data-id={idx}
-                                                    id={nomineeId}
-                                                    value={values.fields[idx].nominee}
-                                                    className="nominee"
-                                                />
+                                {
+                                    values.fields.map((val, idx) => {
+                                        let nomineeId = `nominee-${idx}`, relationId = `relation-${idx}`, photographId = `photograph-${idx}`
+                                        return (
+                                            <div>
 
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>
-                                                <label htmlFor={relationId}>Relation</label>
-                                                <input
-                                                    type="text"
-                                                    name="relation"
-                                                    data-id={idx}
-                                                    id={relationId}
-                                                    value={values.fields[idx].relation}
-                                                    className="relation"
-                                                />
 
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
                                                 <div className='d-flex justify-content-center'>
                                                     <div className='card mb-3' style={{ boxShadow: "1px 2px 3px rgba(0, 0, 0, .1)" }}>
-                                                        <div className='card-body d-flex justify-content-between'>
-                                                            <div className=''>
+                                                        <div className='card-body'
+                                                            style={{ paddingLeft: "140px" }}
+                                                        >
+
+                                                            <div className="col-sm-4"
+                                                                style={{ marginTop: "10px", marginLeft: "25px" }}
+                                                            >
+                                                                <label htmlFor={nomineeId}>Nominee's Name</label>
+                                                                <input
+                                                                    type="text"
+                                                                    name="nominee"
+                                                                    data-id={idx}
+                                                                    id={nomineeId}
+                                                                    value={values.fields[idx].nominee}
+                                                                    className="nominee"
+                                                                    placeholder="Enter Nominee's Name"
+                                                                    style={{ width: "400px", height: "40px", paddingLeft: "10px" }}
+
+                                                                />
+                                                            </div>
+
+
+                                                            <div className="col-sm-4"
+                                                                style={{ marginTop: "10px", marginLeft: "25px" }}
+                                                            >
+                                                                <label htmlFor={relationId}>Relation</label>&nbsp;&nbsp;&nbsp;
+                                                        <input
+                                                                    type="text"
+                                                                    name="relation"
+                                                                    data-id={idx}
+                                                                    id={relationId}
+                                                                    value={values.fields[idx].relation}
+                                                                    className="relation"
+                                                                    placeholder="Enter Relation"
+                                                                    style={{ width: "400px", height: "40px", paddingLeft: "10px" }}
+
+                                                                />
+
+                                                            </div>
+                                                            <div className="col-sm-4"
+                                                                style={{ marginTop: "10px", marginLeft: "25px" }}
+                                                            >
+                                                                <label htmlFor="">Nominee's Photo</label>
                                                                 <input
                                                                     type='file'
                                                                     name="photograph"
@@ -102,43 +120,47 @@ export class Nominee extends Component {
                                                                     aria-describedby='fileHelp'
                                                                 ></input>
                                                             </div>
-                                                            <div className=''>
-                                                                <button
-                                                                    type='button'
-                                                                    onClick={() => console.log("uploaded")}
-                                                                    style={{ backgroundColor: '#56c9ef', boxShadow: "1px 2px 3px rgba(0, 0, 0, .1)" }}
-                                                                    className='btn btn-primary'
-                                                                >
-                                                                    Upload
-                        </button>
-                                                            </div>
+
+                                                        </div>
+                                                        <div className="card-footer d-flex justify-content-center"
+                                                            style={{ paddingLeft: "50px" }}
+                                                        >
+                                                            <span className="b mr-5" onClick={addFields}>Add More</span>
+                                                            <span className="b mr-5" onClick={() => deteteRow(idx)}>Delete</span>
+                                                            <span className="b">Submit</span>
+
+
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                            </td>
-                                        </tr>
+                                            </div>
 
-                                        <tr>
-                                            <td> <button onClick={() => deteteRow(idx)}>Delete row</button></td>
-                                        </tr>
-                                    </table>
+                                        )
+                                    })
 
-                                </div>
+                                }
 
-                            )
-                        })
-
-                    }
+                            </form>
 
 
-                    <input type="submit" value="Submit" />
+                        </div>
+
+                        <div
+                            className="card-footer d-flex justify-content-between"
+                            style={{ background: "#fff" }}
+                        >
+
+                            <span className="b mr-5" onClick={this.back}>Back</span>
+                            <span className="b" onClick={this.continue}>Next</span>
 
 
-                </form>
-                <button onClick={addFields}>add row</button>
-                <button onClick={this.continue}>Continue</button>
-                <button onClick={this.back}>Back</button>
+
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         )
     }

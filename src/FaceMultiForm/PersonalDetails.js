@@ -30,27 +30,27 @@ export class PersonalDetails extends Component {
                                 {/* Applicant's Name */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Applicant's Name</label>
-                                    <input type="text" value={values.applicantName} onChange={handleChange('applicantName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Applicant's Name" />
+                                    <input style={{ borderRadius: "50px" }} type="text" value={values.applicantName} onChange={handleChange('applicantName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Applicant's Name" />
                                 </div>
 
                                 {/* Mother Name */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Mother's Name</label>
-                                    <input type="text" value={values.motherName} onChange={handleChange('motherName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mother's Name" />
+                                    <input style={{ borderRadius: "50px" }} type="text" value={values.motherName} onChange={handleChange('motherName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mother's Name" />
                                     {/* <small className="form-text text-muted">Enter Mother's Name</small> */}
                                 </div>
 
                                 {/* Father Name */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Father's Name</label>
-                                    <input type="email" value={values.fatherName} onChange={handleChange('fatherName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Father's Name" />
+                                    <input style={{ borderRadius: "50px" }} type="email" value={values.fatherName} onChange={handleChange('fatherName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Father's Name" />
                                     {/* <small className="form-text text-muted">Enter Father's Name</small> */}
                                 </div>
 
                                 {/* Spouse Name */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Spouse Name</label>
-                                    <input type="email" value={values.spouseName} onChange={handleChange('spouseName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Spouse Name" />
+                                    <input style={{ borderRadius: "50px" }} type="email" value={values.spouseName} onChange={handleChange('spouseName')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Spouse Name" />
                                     {/* <small className="form-text text-muted">Enter Spouse Name</small> */}
                                 </div>
 
@@ -58,6 +58,7 @@ export class PersonalDetails extends Component {
                                 <div className='form-group col-sm-4'>
                                     <label htmlFor="">Gender</label>
                                     <select
+                                        style={{ borderRadius: "50px" }}
                                         className='custom-select'
                                         value={values.gender}
                                         onChange={handleChange('gender')}
@@ -72,28 +73,28 @@ export class PersonalDetails extends Component {
                                 {/* Profession */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Profession</label>
-                                    <input type="email" value={values.profession} onChange={handleChange('profession')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Profession" />
+                                    <input style={{ borderRadius: "50px" }} type="email" value={values.profession} onChange={handleChange('profession')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Profession" />
 
                                 </div>
 
                                 {/* Mobile Phone Number */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Mobile Phone Number</label>
-                                    <input type="email" value={values.mobileNumber} onChange={handleChange('mobileNumber')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile Phone Number" />
+                                    <input style={{ borderRadius: "50px" }} type="email" value={values.mobileNumber} onChange={handleChange('mobileNumber')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile Phone Number" />
 
                                 </div>
 
                                 {/* Present Address */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Present Address</label>
-                                    <input type="email" value={values.presentAddress} onChange={handleChange('presentAddress')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Provide Present Address" />
+                                    <input style={{ borderRadius: "50px" }} type="email" value={values.presentAddress} onChange={handleChange('presentAddress')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Provide Present Address" />
 
                                 </div>
 
                                 {/* Permanent Address */}
                                 <div className="form-group col-sm-4">
                                     <label htmlFor="">Permanent Address</label>
-                                    <input type="email" value={values.permanentAddress} onChange={handleChange('permanentAddress')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Provide Permanent Address" />
+                                    <input style={{ borderRadius: "50px" }} type="email" value={values.permanentAddress} onChange={handleChange('permanentAddress')} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Provide Permanent Address" />
 
                                 </div>
                                 <div className="d-flex justify-content-center col-sm-3" >
