@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Sign from './images/sign.svg'
 
 export class Signature extends Component {
     continue = e => {
@@ -45,71 +46,69 @@ export class Signature extends Component {
         const { values } = this.props;
         console.log(values.signature);
         return (
-            <div>
-                <div className='container'>
-                    <div className='d-flex flex-column'>
-                        <div className='d-flex justify-content-center'>
-                            <div
-                                className='col-sm-6 p-3 mb-2'
-                                style={{
-                                    backgroundColor: '#56c9ef',
-                                    color: '#fff',
-                                    textAlign: 'center',
-                                    marginTop: '15px',
-                                    boxShadow: "1px 2px 3px rgba(0, 0, 0, .1)"
-                                }}
-                            >
-                                <i className='fas fa-edit' />
-                    &nbsp;Signature
-                  </div>
+            <div className="row d-flex justify-content-center">
+
+                <div className="col-sm-8 d-flex justify-content-center">
+                    <div className="card col-sm-4" style={{ paddingTop: "25px" }}>
+                        <div className="card-header up">
+                            <h3>Provide Signature</h3>
                         </div>
-                        <br />
-                        <div className='d-flex justify-content-center'>
+                        <div className="card-body d-flex justify-content-center">
+
                             <img
-                                src={values.flag + values.signature}
+
+                                src={values.signature ? (values.flag + values.signature) : Sign}
                                 style={{
-                                    margin: "auto", cursor: 'pointer', width: "300px", height: "200px"
-                                    
+
+                                    width: "300px",
+                                    height: "200px",
                                 }}
-                                className='img-fluid img-thumbnail'
+                                className=" img-fluid img-thumbnail im"
                                 id='SignaturePic'
-                                alt=''
+                                alt=""
                             />
+
+
+
                         </div>
-                        <br />
-                        <div className='d-flex justify-content-center'>
-                            <div className='card mb-3' style={{ boxShadow: "1px 2px 3px rgba(0, 0, 0, .1)" }}>
-                                <div className='card-body d-flex justify-content-between'>
-                                    <div className=''>
-                                        <input
-                                            type='file'
-                                            onChange={this.fileSelectedHandler}
-                                            className='form-control-file'
-                                            id='input-file'
-                                            aria-describedby='fileHelp'
-                                        ></input>
-                                    </div>
-                                    {/* <div className=''>
-                                        <button
-                                            type='button'
-                                            onClick={() => console.log("uploaded")}
-                                            style={{ backgroundColor: '#56c9ef', boxShadow: "1px 2px 3px rgba(0, 0, 0, .1)" }}
-                                            className='btn btn-primary'
-                                        >
-                                            Upload
-                        </button>
-                                    </div> */}
-                                    
+                        <div
+                            className="card-footer d-flex justify-content-around"
+                            style={{ background: "#fff" }}
+                        >
+
+                            <div class="input-group mb-3 ">
+                                <div class="custom-file">
+                                    <input type="file"
+                                        onChange={this.fileSelectedHandler}
+
+                                        class="form-control-file" id="input-file" />
+                                    <label class="custom-file-label" for="input-file">Choose Image</label>
                                 </div>
+
                             </div>
+
+
+                        </div>
+                        <div
+                            className="card-footer d-flex justify-content-between"
+                            style={{ background: "#fff" }}
+                        >
+
+                            <span className="b mr-5" onClick={this.back}>Back</span>
+                            <span className="b" onClick={this.continue}>Next</span>
+
+
+
+
                         </div>
                     </div>
-                </div>
-                <div className="d-flex justify-content-center" >
 
-                                        <button className="btn text-white mb-3" onClick={this.back} style={{ borderRadius: "50px", minWidth: "100px", background: "#099e96" }}>Back</button>&nbsp; &nbsp;
-                                        <button className="btn text-white mb-3" onClick={this.continue} style={{ borderRadius: "50px", minWidth: "100px", background: "#099e96" }}>Next Page</button>
-                                    </div>
+                </div>
+
+
+
+
+
             </div>
         )
     }

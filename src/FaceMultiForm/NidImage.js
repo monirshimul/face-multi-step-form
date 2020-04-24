@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import "./utils/Common.css";
+import Nid from './images/nid-f.svg';
+import NidOne from './images/nid-f2.svg';
+import NidTwo from './images/nid-f3.svg';
+import NidThree from './images/nid-f4.svg';
 
 export class NidImage extends Component {
   continue = (e) => {
@@ -74,7 +78,7 @@ export class NidImage extends Component {
               <div className="card-body d-flex justify-content-center">
 
                 <img
-                  src={values.flag + values.NidFront}
+                  src={values.NidFront ? (values.flag + values.NidFront) : NidThree}
                   style={{
                     margin: "auto",
                     cursor: "pointer",
@@ -122,7 +126,7 @@ export class NidImage extends Component {
               </div>
               <div className="card-body d-flex justify-content-center">
                 <img
-                  src={values.flag + values.NidBack}
+                  src={values.NidBack ? (values.flag + values.NidBack) : NidTwo}
                   style={{
                     margin: "auto",
                     cursor: "pointer",

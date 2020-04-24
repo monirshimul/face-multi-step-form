@@ -100,7 +100,7 @@ export class PersonalDetails extends Component {
                                 <div className="d-flex justify-content-center col-sm-3" >
 
                                     <div className="b mb-3" onClick={this.back} >Back</div>&nbsp; &nbsp;
-                        <div className="b mb-3" onClick={this.continue} >Next Page</div>
+                        <div className="b mb-3" onClick={this.continue} >Next</div>
                                 </div>
 
                             </form>
