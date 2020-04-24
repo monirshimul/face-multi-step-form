@@ -19,58 +19,105 @@ export class Confirm extends Component {
         const { values } = this.props;
         console.log(values);
         return (
-            <div>
-                <h1>Account Details</h1><br />
-                <p>Account Number : {values.accountNumber}</p>
-                <p>Product and Services : {values.product}</p>
-                <p>Account Type : {values.accountType}</p>
-                <br /> <br />
-                <h2>Account Opening Details</h2>
-                <br />
-                <h3>Nid front side</h3><br />
-                <img src={values.flag + values.NidFront} alt="" style={{ width: "150px", height: "120px", border: "1px solid #333" }}></img>
-                <h3>Nid back side</h3><br />
-                <img src={values.flag + values.NidBack} alt="" style={{ width: "150px", height: "120px", border: "1px solid #333" }}></img>
-                <br /> <br />
-                <h2>Face Verification Details</h2><br />
-
-                <p>Nid No : {values.nidNo}</p>
-                <p>Date of Birth : {formatDate(values.dob)}</p><br />
-                <h3>Applicant's Image</h3><br />
-                <img src={values.flag + values.faceImage} alt="" style={{ width: "150px", height: "120px", border: "1px solid #333" }}></img>
-                <br />
-                <h2>Personal Information</h2><br />
-                <p>Applicant's Name : {values.applicantName}</p>
-                <p>Mother's Name : {values.motherName}</p>
-                <p>Father's Name : {values.fatherName}</p>
-                <p>Spouse Name : {values.spouseName}</p>
-                <p>Gender : {values.gender}</p>
-                <p>Profession : {values.profession}</p>
-                <p>Mobile Phone Number : {values.mobileNumber}</p>
-                <p>Present Address : {values.presentAddress}</p>
-                <p>Permanent Address : {values.permanentAddress}</p>
-                <br />
-
-                {values.fields.map((val, i) => (
-                    <div>
-                        <br />
-                        <h2>Nominee {i + 1}</h2>
-                        <p>Nominee : {values.fields[i].nominee}</p>
-                        <p>Relation : {values.fields[i].relation}</p>
-                        <p>Photograph : {values.fields[i].photograph}</p>
+            <div className="container">
+                <div className="card col-sm-12" style={{ paddingTop: "25px" }}>
+                    <div className="card-header up">
+                        <h3>All Information</h3>
                     </div>
-                ))}
-                <br />
-                <h2>Applicant's Signature</h2><br />
-                <img src={values.flag + values.signature} alt="" style={{ width: "150px", height: "120px", border: "1px solid #333" }}></img>
-                <br />
-                <br /> <br />
+                    <div class="row card-body d-flex justify-content-around">
+                        <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
+                            <div className="card-header up">
+                                <h5>Account Details</h5>
+                            </div>
+                            <div className="card-body">
+                                <p className="text-muted">Account Number : {values.accountNumber}</p>
+                                <p className="text-muted">Product and Services : {values.product}</p>
+                                <p className="text-muted">Account Type : {values.accountType}</p>
+                            </div>
+                        </div>
+                        <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
+                            <div className="card-header up">
+                                <h5>Nid Details</h5>
+                            </div>
+                            <div className="card-body text-center">
+                                <p className="text-muted">Nid front side :
+                                    <img src={values.flag + values.NidFront} alt="" style={{ width: "150px", height: "120px", border: "1px solid #00bdaa", marginLeft: "25px" }}></img>
+                                </p>
 
-                <div className="d-flex justify-content-center" >
+                                <p className="text-muted">Nid back side :
+                                    <img src={values.flag + values.NidBack} alt="" style={{ width: "150px", height: "120px", border: "1px solid #00bdaa", marginLeft: "25px" }}></img>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
+                            <div className="card-header up">
+                                <h5>Applicant Image</h5>
+                            </div>
+                            <div className="card-body" style={{ margin: "20px 0px" }}>
+                                <p className="text-muted">Picture :
+                                    <img src={values.flag + values.faceImage} alt="" style={{ width: "150px", height: "120px", border: "1px solid #00bdaa", marginLeft: "25px" }}></img>
+                                </p>
 
-                    <button className="btn text-white mb-3" onClick={this.back} style={{ borderRadius: "50px", minWidth: "100px", background: "#099e96" }}>Back</button>&nbsp; &nbsp;
-                    <button className="btn text-white mb-3" onClick={this.continue} style={{ borderRadius: "50px", minWidth: "100px", background: "#099e96" }}>Confirm</button>
+                            </div>
+                        </div>
+                        <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
+                            <div className="card-header up">
+                                <h5>Personal Information</h5>
+                            </div>
+                            <div className="card-body">
+
+                                <p className="text-muted">Applicant's Name : {values.applicantName}</p>
+                                <p className="text-muted">Mother's Name : {values.motherName}</p>
+                                <p className="text-muted">Father's Name : {values.fatherName}</p>
+                                <p className="text-muted">Spouse Name : {values.spouseName}</p>
+                                <p className="text-muted">Gender : {values.gender}</p>
+                                <p className="text-muted">Profession : {values.profession}</p>
+                                <p className="text-muted">Mobile Phone Number : {values.mobileNumber}</p>
+                                <p className="text-muted">Present Address : {values.presentAddress}</p>
+                                <p className="text-muted">Permanent Address : {values.permanentAddress}</p>
+
+                            </div>
+                        </div>
+                        <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
+                            <div className="card-header up">
+                                <h5>Nominee Details</h5>
+                            </div>
+                            <div className="card-body">
+                                {values.fields.map((val, i) => (
+                                    <div>
+
+                                        <p className="text-muted">Nominee {i + 1}</p >
+                                        <p className="text-muted">Nominee : {values.fields[i].nominee}</p>
+                                        <p className="text-muted">Relation : {values.fields[i].relation}</p>
+                                        <p className="text-muted">Photograph : {values.fields[i].photograph}</p>
+                                    </div>
+                                ))}
+
+                            </div>
+                        </div>
+                        <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
+                            <div className="card-header up">
+                                <h5>Applicant Signature</h5>
+                            </div>
+                            <div className="card-body">
+                                <p>Signature :
+                                    <img src={values.flag + values.signature} alt="" style={{ width: "150px", height: "120px", border: "1px solid #00bdaa", marginLeft: "25px" }}></img>
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="d-flex justify-content-center"
+                        style={{ marginBottom: "20px" }}
+                    >
+
+                        <span className="b mr-5" onClick={this.back}>Back</span>
+                        <span className="b" onClick={this.continue}>Confirm</span>
+                    </div>
                 </div>
+
+
             </div>
         )
     }

@@ -41,9 +41,9 @@ export class CaptureImage extends Component {
     console.log(values.dob);
 
     return (
-      <div className="">
+      <div className="container">
         <div className="row d-flex justify-content-center">
-          <div className="card col-sm-3" style={{ paddingTop: "25px" }}>
+          <div className="card col-sm-5" style={{ paddingTop: "25px" }}>
             <div className="card-header up">
               <h3>Face Verification</h3>
             </div>
